@@ -13,6 +13,12 @@ In this tutorial we will be, spinning up an virtual server instance(vsi) and ssh
 4. IP address
 5. SSH Key that ought to be mapped to virtual server.
 
+### Pre-requisites
+We use the resource group for provisioning of infrastructure already exists. Per this project, namespace means resource group name. Terraform's data is used for retrieving the resource group id.
+
+### Pictorial Representation
+
+
 As said, a simple provisioning has multiple dependencies on other cloud resources, which is ought to be done in specific order, for example subnet needs to be created after vpc.
 
 ## Terraform Components
@@ -22,25 +28,40 @@ Any terraform component comprises of the following,
 The provider.tf contains the configuration that are specific cloud providers. In our example, we are using the IBMCloud provider. The mandated varibales for provider configuration could be either set as environment variables or could be made as part of provider.tf.
 
 ### variables.tf
-The input variables that any terrafrom module accepts is defined in the variables.tf.
-
-In our use case at the root-level we accept input variable namespace.
-
-```
-```
+The input variables can be defined both at modules and at the project's root level.
 
 ### outputs.tf
-The output that we want for further processing are defined at module level. The same could be used at the root level and written to the file or on console as required.
-
-```
-```
+Similarly the output variables can be defined at both module and root level. It could be either written to the file or on console as required.
 
 ### tfstate
 Last but not the least, terraform stores/maintains the last known state of the infrastructure to as state file. It could be stored remotely or locally. The number of backups for the tfstate file is configurable.
 
 ## Phases
 
-### Plan
-### Apply
-### Destroy
+### Init
+The init pulls all the required provider resources based on configuration.
 
+### Plan
+The CORE responsibilty of the plan is evalauting the differences between the last know config state and the current configuration  that is sent as input.
+
+In our use case, we are having the tfvars within a demo. So as demonstrate the ease of deploying n-number infrastructures and tearing down unused infrastructures as and when required.
+
+```
+terraform plan -var-file=demo/terraform.tfvars -out=demo/demo.tfstate
+```
+
+The above command creates a plan based on the input file demo/terrafom.tfstate and stores it in  the file demo/demo.tfstate, so the generated and verified plan can be used as an input while applying.
+
+### Apply 
+This provisions the infrastructure per the configuration. Below command runs in a auto-approve, which does not prompts approval.
+
+```
+terraform apply -var-file=demo/terraform.tfvars -state=demo/current.tfstate -auto-approve
+```
+
+### Destroy
+Decommisssions the infrastructure based on the tfstate and variables file. Below command tears down the infrastructure and does not prompt's for approval.
+
+```
+terraform destroy -var-file=demo/terraform.tfvars -state=demo/current.tfstate -auto-approve
+```
