@@ -5,6 +5,8 @@ The automation of provisioning infrastructure has become mandatory in the cloud 
 
 With cloud in place, the resources are charged in various permutations and combination indeed to a micro-second extent. Hence decommissioning or releasing of unused resource is not an option. At the same time, based on the traffic or any other need, the better infrastrucure must be rolled up instantly.
 
+> :warning: **Currently we're not mapping the instance to block or file**: Please note, upcoming on next post!
+
 ## What we're doing here,
 In this tutorial we will be, spinning up an virtual server instance(vsi) and ssh into the vsi which has following pre-requisites,
 1. VPC
