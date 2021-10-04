@@ -1,4 +1,4 @@
-# Terraforming on IBMCloud
+# Terraforming on IBMCloud's VPC Storage
 The post tries to walks through the various steps at a novice level, refreshing the basic concepts involved at infrastructure provisioning using terraform. 
 
 The automation of provisioning infrastructure has become mandatory in the cloud era. The infrastructure once successfully done must be promoted to various stages, scaled up and down, destroyed based on the need with lesser effort. 
