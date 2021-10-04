@@ -17,9 +17,9 @@ In this tutorial we will be, spinning up an virtual server instance(vsi) and ssh
 We use the resource group for provisioning of infrastructure already exists. Per this project, namespace means resource group name. Terraform's data is used for retrieving the resource group id.
 
 ### Pictorial Representation
-
-
 As said, a simple provisioning has multiple dependencies on other cloud resources, which is ought to be done in specific order, for example subnet needs to be created after vpc.
+
+![demo](./demo.png)
 
 ## Terraform Components
 Any terraform component comprises of the following,
