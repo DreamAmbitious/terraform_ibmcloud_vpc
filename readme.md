@@ -45,6 +45,10 @@ Last but not the least, terraform stores/maintains the last known state of the i
 ### Init
 The init pulls all the required provider resources based on configuration.
 
+```
+terraform init
+```
+
 ### Plan
 The CORE responsibilty of the plan is evalauting the differences between the last know config state and the current configuration  that is sent as input.
 
