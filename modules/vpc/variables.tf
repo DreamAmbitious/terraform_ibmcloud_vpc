@@ -9,3 +9,11 @@ variable "resource_group_id" {
 variable "region" {
   type = string
 }
+
+variable "subnet_cidr_block" {
+  type = string
+}
+
+variable "subnet_zone" {
+  type = string
+}

@@ -1,5 +1,5 @@
-namespace="preethi"
+namespace="demo"
 region="us-south"
 vpc_subnet_cidr_block="10.240.0.0/18"
 vpc_subnet_zone="us-south-1"
-ssh_key_path="/Users/preethi/.ssh/terraform_rsa.pub"
+ssh_key_path="/Path/to/ssh/key"
