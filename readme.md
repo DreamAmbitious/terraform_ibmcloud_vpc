@@ -41,6 +41,7 @@ Similarly the output variables can be defined at both module and root level. It 
 Last but not the least, terraform stores/maintains the last known state of the infrastructure to as state file. It could be stored remotely or locally. The number of backups for the tfstate file is configurable.
 
 ## Phases
+Let's stride through the working demo. Clone the repo and follow through the below steps.
 
 ### Init
 The init pulls all the required provider resources based on configuration.
