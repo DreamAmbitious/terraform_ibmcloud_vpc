@@ -65,7 +65,7 @@ The above command creates a plan based on the input file demo/terrafom.tfstate a
 This provisions the infrastructure per the configuration. Below command runs in a auto-approve, which does not prompts approval.
 
 ```
-terraform apply -var-file=demo/terraform.tfvars -state=demo/current.tfstate -auto-approve
+terraform apply -var-file=demo/terraform.tfvars -state=demo/demo.tfstate -auto-approve
 ```
 
 ### Destroy

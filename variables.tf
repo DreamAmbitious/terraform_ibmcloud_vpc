@@ -20,10 +20,15 @@ variable "ssh_key_path" {
 
 variable "instance_image_id" {
   type = string
-  default = "r134-ed3f775f-ad7e-4e37-ae62-7199b4988b00"
+  default = "r006-fedc50ed-8ea3-4a66-9559-c482c4e6ed88"
 }
 
 variable "instance_profile" {
   type = string
   default = "bx2-2x8"
+}
+
+
+variable "ibmcloud_api_key" {
+  type = string
 }
