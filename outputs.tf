@@ -7,3 +7,8 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
   description = "The vpc id to map block or shares."
 }
+
+output "mount_path" {
+  value       = module.instance.target_mount_path
+  description = "The target mount path."
+}
